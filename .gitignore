@@ -1,0 +1,38 @@
+# Local agent and editor state
+.claude/
+.playwright-mcp/
+.playwright-extension-profile/
+.github/copilot-instructions.md
+CLAUDE.md
+*.code-workspace
+.vscode/
+.idea/
+
+# Personal financial data and analysis
+all-transactions.json
+*snapshot*.md
+jan-*.md
+budget-snapshot.md
+financial-dashboard.html
+analyze-*.js
+final-cash-analysis.js
+full_analysis.py
+reconcile.py
+dev/
+dev-artifacts/
+
+# Browser/test artifacts
+*.log
+*.png
+*.webp
+*.txt
+!icons/*.png
+playwright-report/
+test-results/
+coverage/
+
+# OS and temporary files
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp

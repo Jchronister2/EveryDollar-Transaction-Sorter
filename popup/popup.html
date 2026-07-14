@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EveryDollar Auto-Budget</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="popup-container">
+    <header>
+      <h1>💰 Auto-Budget</h1>
+      <span class="version">v1.3.1</span>
+    </header>
+
+    <section class="status-section">
+      <div id="connection-status" class="status-badge status-checking">
+        Checking EveryDollar...
+      </div>
+    </section>
+
+    <section class="actions-section">
+      <h2>Quick Actions</h2>
+      <button id="btn-scan" class="btn btn-primary" disabled>
+        🔄 Scan Transactions
+      </button>
+      <button id="btn-apply" class="btn btn-success" disabled>
+        ✓ Apply High-Confidence
+      </button>
+      <button id="btn-learn" class="btn btn-secondary" disabled>
+        📚 Learn from Current Month
+      </button>
+    </section>
+
+    <section class="stores-section">
+      <h2>Store Integration</h2>
+      <p class="helper-text">Open store sites to scrape your itemized receipts</p>
+      <div class="store-buttons">
+        <button id="btn-target" class="btn btn-store btn-target">
+          🎯 Target
+        </button>
+        <button id="btn-costco" class="btn btn-store btn-costco">
+          🛒 Costco
+        </button>
+        <button id="btn-fredmeyer" class="btn btn-store btn-fredmeyer">
+          🏪 Fred Meyer
+        </button>
+      </div>
+      <div id="receipts-status" class="receipts-status"></div>
+    </section>
+
+    <section class="settings-section">
+      <h2>Settings</h2>
+
+      <div class="setting-row">
+        <label for="confidence-threshold">Confidence Threshold</label>
+        <div class="setting-control">
+          <input type="range" id="confidence-threshold" min="50" max="95" value="75">
+          <span id="confidence-value">75%</span>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <label for="auto-apply">Auto-apply high confidence</label>
+        <input type="checkbox" id="auto-apply" checked>
+      </div>
+
+      <div class="setting-row">
+        <label for="notifications">Show notifications</label>
+        <input type="checkbox" id="notifications" checked>
+      </div>
+    </section>
+
+    <section class="data-section">
+      <h2>Data Management</h2>
+      <div id="storage-stats" class="storage-stats">
+        Loading storage info...
+      </div>
+      <div class="data-buttons">
+        <button id="btn-export" class="btn btn-sm">📤 Export</button>
+        <button id="btn-import" class="btn btn-sm">📥 Import</button>
+        <button id="btn-clear" class="btn btn-sm btn-danger">🗑️ Clear All</button>
+      </div>
+      <input type="file" id="import-file" accept=".json" style="display: none;">
+    </section>
+
+    <section class="gaps-section">
+      <h2>Knowledge Gaps</h2>
+      <div id="knowledge-gaps" class="gaps-list">
+        Loading...
+      </div>
+    </section>
+
+    <footer>
+      <a href="#" id="btn-help">Help</a>
+      <span>•</span>
+      <a href="#" id="btn-feedback">Feedback</a>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

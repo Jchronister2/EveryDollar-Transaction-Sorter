@@ -1,0 +1,123 @@
+{
+  "manifest_version": 3,
+  "name": "EveryDollar Auto-Budget",
+  "version": "1.24.0",
+  "description": "Automatically categorize and enhance EveryDollar transactions with smart learning and store integration",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "scripting",
+    "contextMenus",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://www.everydollar.com/*",
+    "https://everydollar.com/*",
+    "https://www.target.com/*",
+    "https://www.costco.com/*",
+    "https://www.fredmeyer.com/*",
+    "https://www.amazon.com/*",
+    "https://www.walmart.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.everydollar.com/*",
+        "https://everydollar.com/*"
+      ],
+      "js": [
+        "content/react-bridge.js"
+      ],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://www.everydollar.com/*",
+        "https://everydollar.com/*"
+      ],
+      "js": [
+        "lib/storage.js",
+        "lib/categorizer.js",
+        "content/everydollar.js"
+      ],
+      "css": [
+        "content/everydollar.css"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.target.com/orders*"
+      ],
+      "js": [
+        "lib/storage.js",
+        "content/target.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.costco.com/OrderStatusCmd*",
+        "https://www.costco.com/myaccount/*"
+      ],
+      "js": [
+        "lib/storage.js",
+        "content/costco.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.fredmeyer.com/mypurchases*",
+        "https://www.fredmeyer.com/order/*"
+      ],
+      "js": [
+        "lib/storage.js",
+        "content/fredmeyer.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.amazon.com/gp/css/order-history*",
+        "https://www.amazon.com/gp/your-account/order-history*",
+        "https://www.amazon.com/your-orders/*",
+        "https://www.amazon.com/gp/your-account/order-details*"
+      ],
+      "js": [
+        "lib/storage.js",
+        "content/amazon.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.walmart.com/orders*",
+        "https://www.walmart.com/account/orders*"
+      ],
+      "js": [
+        "lib/storage.js",
+        "content/walmart.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

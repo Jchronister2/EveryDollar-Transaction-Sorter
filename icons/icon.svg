@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2e7d32"/>
+      <stop offset="100%" style="stop-color:#43a047"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="url(#grad)"/>
+
+  <!-- EveryDollar swoosh paths -->
+  <path fill="#fff" opacity="0.85" d="M64 18c-10 0-32 3-52 26l45 13s19-28 58-26l-51-13z"/>
+  <path fill="#fff" opacity="0.65" d="M115 36c-32 0-58 32-58 32l-38-10 4 9 34 12s26-39 58-40v-3z"/>
+  <path fill="#fff" opacity="0.45" d="M113 43c-28 3-56 44-56 44l-33-13 4 8 27 11c21-32 42-48 57-50h1z"/>
+
+  <!-- Robot head -->
+  <rect x="42" y="60" width="44" height="42" rx="8" fill="#fff"/>
+
+  <!-- Robot eyes -->
+  <circle cx="54" cy="76" r="6" fill="#2e7d32"/>
+  <circle cx="74" cy="76" r="6" fill="#2e7d32"/>
+
+  <!-- Eye highlights -->
+  <circle cx="52" cy="74" r="2" fill="#fff"/>
+  <circle cx="72" cy="74" r="2" fill="#fff"/>
+
+  <!-- Robot antenna -->
+  <line x1="64" y1="60" x2="64" y2="48" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="64" cy="44" r="5" fill="#fff"/>
+
+  <!-- Robot mouth/speaker grille -->
+  <rect x="52" y="88" width="24" height="6" rx="2" fill="#2e7d32"/>
+
+  <!-- AI sparkles -->
+  <path fill="#FFD700" d="M100 22l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/>
+  <path fill="#FFD700" d="M22 48l1.5 4.5 4.5 1.5-4.5 1.5-1.5 4.5-1.5-4.5-4.5-1.5 4.5-1.5z"/>
+</svg>
