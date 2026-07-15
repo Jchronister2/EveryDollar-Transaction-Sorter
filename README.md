@@ -14,6 +14,18 @@ This project is not affiliated with, endorsed by, or supported by Ramsey Solutio
 - Proposes split transactions when receipt items span multiple categories.
 - Exports a portable local-data snapshot for backup or debugging.
 
+## Screenshots
+
+These captures render the shipped extension interface against synthetic merchants, amounts, and categories. No real financial data is shown.
+
+### Transaction review workflow
+
+![Transaction review queue with category suggestions](docs/screenshots/review-workflow.png)
+
+### Merchant rule manager
+
+![Learned merchant rename and category rules](docs/screenshots/rules-manager.png)
+
 ## Privacy and safety
 
 - The extension has no project-operated backend, analytics, or telemetry.
