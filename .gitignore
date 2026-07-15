@@ -27,6 +27,9 @@ dev-artifacts/
 *.webp
 *.txt
 !icons/*.png
+!docs/
+!docs/screenshots/
+!docs/screenshots/*.png
 playwright-report/
 test-results/
 coverage/
